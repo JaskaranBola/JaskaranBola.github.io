@@ -47,12 +47,12 @@ input[type="text"]:focus {
 
 .actions {
   position: absolute;
-  top: 260px;
+  top: 270px;
   left: 10px;
-  color: white;
-  height: 50px;
+  color: #DFDEDE;
+  height: 30px;
   width: 300px;
-  font: bold 16px Helvetica, Sans-Serif;
+  font: bold 13px Helvetica, Sans-Serif;
   //  letter-spacing: -1px;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.7);
