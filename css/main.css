@@ -8,10 +8,6 @@ body {
 
 .darkroom {}
 
-.inputtext {
-  margin-top: 10px;
-}
-
 input[type="text"] {
   height: 20px;
   width: 750px;
@@ -37,14 +33,39 @@ input[type="text"]:focus {
 
 .story {
   position: absolute;
-  top: 200px;
+  top: 300px;
   left: 10px;
   color: white;
   height: 200px;
   width: 300px;
-  font: bold 24px Helvetica, Sans-Serif;
-/*  letter-spacing: -1px;*/
+  font: bold 16px Helvetica, Sans-Serif;
+  //  letter-spacing: -1px;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.7);
   word-wrap: break-word;
+}
+
+.actions {
+  position: absolute;
+  top: 260px;
+  left: 10px;
+  color: white;
+  height: 50px;
+  width: 300px;
+  font: bold 16px Helvetica, Sans-Serif;
+  //  letter-spacing: -1px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  word-wrap: break-word;
+}
+
+label {
+  color: green;
+  text-align: right;
+  clear: both;
+  font-size: 22px;
+  font-family: monospace;
+  float: left;
+  margin-right: 15px;
+  position: absolute;
 }
