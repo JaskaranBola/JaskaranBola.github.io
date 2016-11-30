@@ -1,31 +1,50 @@
 body {
   background-color: black;
-  background-image: url("http://i.imgur.com/S2qwenf.jpg");
-  background-repeat:no-repeat;
-  background-size:100%;
+}
+
+.frame {
   position: relative;
 }
-.storytext {
-  
-}
+
+.darkroom {}
+
 .inputtext {
-  margin-top: 720px;
+  margin-top: 10px;
 }
+
 input[type="text"] {
   height: 20px;
-  width: 1050px;
-  background-color : black; 
+  width: 750px;
+  background-color: black;
   border: none;
   border-bottom: 2px solid #4E4C4B;
   color: white;
+  font-size: 24px;
+  font-family: monospace;
 }
+
 input[type="text"]:focus {
   border: none;
-  border-bottom: 3px solid #4E4C4B;
+  border-bottom: 3px solid green;
   outline: 0;
 }
+
 .extraspace {
   margin-top: 10px;
   height: 50px;
   background-color: black;
+}
+
+.story {
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  color: white;
+  height: 200px;
+  width: 300px;
+  font: bold 24px Helvetica, Sans-Serif;
+  //  letter-spacing: -1px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  word-wrap: break-word;
 }
