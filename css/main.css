@@ -1,32 +1,29 @@
 body {
   background-color: black;
   background-image: url("http://i.imgur.com/S2qwenf.jpg");
-  background-repeat: no-repeat;
-  position: fixed;
+  background-repeat:no-repeat;
+  background-size:100%;
+  position: relative;
 }
-
-.storytext {}
-
+.storytext {
+  
+}
 .inputtext {
   margin-top: 720px;
-  position: fixed;
 }
-
 input[type="text"] {
   height: 20px;
   width: 1050px;
-  background-color: black;
+  background-color : black; 
   border: none;
   border-bottom: 2px solid #4E4C4B;
   color: white;
 }
-
 input[type="text"]:focus {
   border: none;
   border-bottom: 3px solid #4E4C4B;
   outline: 0;
 }
-
 .extraspace {
   margin-top: 10px;
   height: 50px;
