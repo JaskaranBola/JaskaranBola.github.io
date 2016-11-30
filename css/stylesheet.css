@@ -1,0 +1,34 @@
+body {
+  background-color: black;
+  background-image: url("http://i.imgur.com/S2qwenf.jpg");
+  background-repeat: no-repeat;
+  position: fixed;
+}
+
+.storytext {}
+
+.inputtext {
+  margin-top: 720px;
+  position: fixed;
+}
+
+input[type="text"] {
+  height: 20px;
+  width: 1050px;
+  background-color: black;
+  border: none;
+  border-bottom: 2px solid #4E4C4B;
+  color: white;
+}
+
+input[type="text"]:focus {
+  border: none;
+  border-bottom: 3px solid #4E4C4B;
+  outline: 0;
+}
+
+.extraspace {
+  margin-top: 10px;
+  height: 50px;
+  background-color: black;
+}
