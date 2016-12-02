@@ -10,8 +10,11 @@ $(document).ready(function() {
       var input = document.getElementById("userinput").value.toLowerCase();
       var img = $("#darkroom");
       for (var i = 0; i < go.length; i++) {
-        if (input === "back") {
-
+        if (input === "back" && img.attr('src') !== "http://www.nikdaum.com/news/09shanghai1625.jpg") {
+          img.fadeOut(1000, function() {
+            img.attr("src", "http://www.nikdaum.com/news/09shanghai1625.jpg").fadeIn(1000);
+          });
+          $('.actions').html("<span class=\"actionoutput\"><i>You went back to the room</span>");
         }
         if (input === go[i] + " " + 'north' || input === 'north') {
           $('.actions').html("<span class=\"actionoutput\"><i>You went towards the north of the apartment</span>");
@@ -34,7 +37,27 @@ $(document).ready(function() {
         img.fadeOut(1000, function() {
           img.attr("src", "https://i.imgur.com/WhWoXqZ.jpg").fadeIn(1000);
         });
+      } else if (level === 2 && img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
+        img.fadeOut(1000, function() {
+          img.attr("src", "https://i.imgur.com/WhWoXqZ.jpg").fadeIn(1000);
+        });
+      } else if (level === 3 && img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
+        img.fadeOut(1000, function() {
+          img.attr("src", "https://i.imgur.com/WhWoXqZ.jpg").fadeIn(1000);
+        });
+      } else if (level === 4 && img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
+        img.fadeOut(1000, function() {
+          img.attr("src", "https://i.imgur.com/WhWoXqZ.jpg").fadeIn(1000);
+        });
       }
-    }
+      for (var i = 0; i < see.length; i++) {}
+      
+      for (var i = 0; i < pickup.length; i++) {
+      
+      
+      }
+
+
+    } // enter key area
   });
 });
