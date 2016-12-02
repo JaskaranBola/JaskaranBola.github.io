@@ -65,11 +65,12 @@ input[type="text"]:focus {
 }
 
 .actionsText {
-  font-
+  
 }
 
 label {
   color: green;
+  top: 560px;
   text-align: right;
   clear: both;
   font-size: 22px;
