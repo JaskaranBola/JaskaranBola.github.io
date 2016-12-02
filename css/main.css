@@ -11,7 +11,7 @@ body {
   position: relative;
 }
 
-.darkroom {}
+#darkroom {}
 
 input[type="text"] {
   height: 20px;
