@@ -50,11 +50,12 @@ $(document).ready(function() {
           img.attr("src", "https://i.imgur.com/WhWoXqZ.jpg").fadeIn(1000);
         });
       }
-      for (var i = 0; i < see.length; i++) {}
-      
+      for (var i = 0; i < see.length; i++) {
+
+      }
+
       for (var i = 0; i < pickup.length; i++) {
-      
-      
+
       }
 
 
