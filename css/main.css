@@ -1,6 +1,6 @@
 @font-face {
-  font-family: myFirstFont;
-  src: url(sansation_light.woff);
+  font-family: playball;
+  src: url("https://fonts.googleapis.com/css?family=Playball");
 }
 
 body {
@@ -45,8 +45,8 @@ input[type="text"]:focus {
   width: 300px;
   font: bold 16px Helvetica, Sans-Serif;
   //  letter-spacing: -1px;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.7);
+  background: rgb(176, 176, 176);
+  background: rgba(176, 176, 176, 0.05);
   word-wrap: break-word;
 }
 
@@ -59,13 +59,17 @@ input[type="text"]:focus {
   width: 300px;
   font: bold 16px Helvetica, Sans-Serif;
   //  letter-spacing: -1px;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.7);
+  background: rgb(176, 176, 176);
+  background: rgba(176, 176, 176, 0.05);
   word-wrap: break-word;
 }
 
-.actionsText {
-  font-
+.titleText {
+  font-family: playball;
+  font-size: 18px;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 label {
