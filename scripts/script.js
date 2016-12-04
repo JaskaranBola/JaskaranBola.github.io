@@ -4,7 +4,7 @@ $(document).ready(function() {
     if (key == 13) // the enter key cod
     {
       var go = ['walk', 'go', 'run', 'crawl', 'jump'];
-      var see = ['look', 'see', 'observe', 'scan', 'look around'];
+      var see = ['look', 'see', 'observe', 'scan', 'look around', 'scan area'];
       var pickup = ['pick', 'pick up', 'grab', 'snatch'];
       var level = 0;
       var input = document.getElementById("userinput").value.toLowerCase();
@@ -51,9 +51,19 @@ $(document).ready(function() {
         });
       }
       for (var i = 0; i < see.length; i++) {
+        if (input === see[i]) {
+          $('.actions').html("<span class=\"actionoutput\"><i>You look around the room</span>");
+          if (img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
 
+          } else if (img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
+
+          } else if (img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
+
+          } else if (img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
+
+          }
+        }
       }
-
       for (var i = 0; i < pickup.length; i++) {
 
       }
