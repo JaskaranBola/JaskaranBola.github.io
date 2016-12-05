@@ -113,23 +113,24 @@ label {
   color: #ABABAB;
 }
 
-::-webkit-scrollbar {
+.story::-webkit-scrollbar {
   width: 12px;
   height: 5px;
   background-color: transparent;
 }
-
-::-webkit-scrollbar-button {
-  height: 0;
-  width: 0
-}
-
-::-webkit-scrollbar-thumb {
+.story::-webkit-scrollbar-thumb {
   background: rgb(255, 255, 255);
   background: rgba(255, 255, 255, 0.1);
 }
 
-::-webkit-scrollbar-track {
+.story::-webkit-scrollbar-track {
   box-shadow: none;
   background-color: transparent;
 }
+.story::-webkit-scrollbar-button:increment {
+border-style: solid;
+border-width: 7px 6px 0 6px;
+border-color: green transparent transparent transparent;
+visibility: active;
+}
+
