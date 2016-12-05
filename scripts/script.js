@@ -9,6 +9,7 @@ $(document).ready(function() {
       var level = 0;
       var input = document.getElementById("userinput").value.toLowerCase();
       var img = $("#darkroom");
+      var inventory = [];
       for (var i = 0; i < go.length; i++) {
         if (input === "back" && img.attr('src') !== "http://www.nikdaum.com/news/09shanghai1625.jpg") {
           img.fadeOut(1000, function() {
