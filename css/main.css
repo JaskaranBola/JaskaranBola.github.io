@@ -48,6 +48,7 @@ input[type="text"]:focus {
   background: rgb(176, 176, 176);
   background: rgba(176, 176, 176, 0.05);
   word-wrap: break-word;
+  overflow: auto;
 }
 
 .actionsContainer {
@@ -98,4 +99,37 @@ label {
 
 .actionoutput::after {
   content: "...";
+}
+
+.foundItems::before {
+  content: "You look around and find something that could help you. ";
+}
+
+.foundItems::after {
+  content: "!";
+}
+
+.foundItems {
+  color: #ABABAB;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 5px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-button {
+  height: 0;
+  width: 0
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: none;
+  background-color: transparent;
 }
