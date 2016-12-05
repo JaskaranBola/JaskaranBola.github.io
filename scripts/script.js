@@ -13,6 +13,7 @@ $(document).ready(function() {
         if (input === "back" && img.attr('src') !== "http://www.nikdaum.com/news/09shanghai1625.jpg") {
           img.fadeOut(1000, function() {
             img.attr("src", "http://www.nikdaum.com/news/09shanghai1625.jpg").fadeIn(1000);
+            $('.story').html("You came back to the center of the apartment, now what? Maybe you should try <u>looking</u> around or going towards another <u>direction</u>");
           });
           $('.actions').html("<span class=\"actionoutput\"><i>You went back to the room</span>");
         }
@@ -39,7 +40,7 @@ $(document).ready(function() {
         });
       } else if (level === 2 && img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
         img.fadeOut(1000, function() {
-          img.attr("src", "https://i.imgur.com/WhWoXqZ.jpg").fadeIn(1000);
+          img.attr("src", "http://creativefan.com/important/cf/2012/09/dark-kitchen-cabinets/old-style-kitchen.jpg").fadeIn(1000);
         });
       } else if (level === 3 && img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
         img.fadeOut(1000, function() {
@@ -54,10 +55,10 @@ $(document).ready(function() {
         if (input === see[i]) {
           $('.actions').html("<span class=\"actionoutput\"><i>You look around the room</span>");
           if (img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
+            $('.items').html("<span class=\"foundItems\"><u>A flashlight</u></span>");
+          } else if (img.attr('src') === "http://creativefan.com/important/cf/2012/09/dark-kitchen-cabinets/old-style-kitchen.jpg") {
 
-          } else if (img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
-
-          } else if (img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
+          } else if (img.attr('src') === "https://i.imgur.com/WhWoXqZ.jpg") {
 
           } else if (img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
 
