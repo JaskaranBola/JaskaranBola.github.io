@@ -11,7 +11,9 @@ body {
   position: relative;
 }
 
-#darkroom {}
+#darkroom {
+  height: 500px;
+}
 
 input[type="text"] {
   height: 20px;
@@ -36,9 +38,9 @@ input[type="text"]:focus {
   background-color: black;
 }
 
-.story {
+.storyBox {
   position: absolute;
-  top: 250px;
+  top: 190px;
   left: 10px;
   color: white;
   height: 200px;
@@ -53,7 +55,7 @@ input[type="text"]:focus {
 
 .actionsContainer {
   position: absolute;
-  top: 470px;
+  top: 405px;
   left: 10px;
   color: white;
   height: 50px;
@@ -63,6 +65,27 @@ input[type="text"]:focus {
   background: rgb(176, 176, 176);
   background: rgba(176, 176, 176, 0.05);
   word-wrap: break-word;
+}
+
+.itemsContainer {
+  position: absolute;
+  top: 460px;
+  left: 10px;
+  color: white;
+  width: 300px;
+  font: bold 16px Helvetica, Sans-Serif;
+  //  letter-spacing: -1px;
+  background: rgb(176, 176, 176);
+  background: rgba(176, 176, 176, 0.05);
+  word-wrap: break-word;
+}
+
+.icons {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  display: inline;
+  margin-right: 3px;
 }
 
 .titleText {
@@ -102,7 +125,7 @@ label {
 }
 
 .foundItems::before {
-  content: "You look around and find something that could help you. ";
+  content: "You look around and find something that could help you. A ";
 }
 
 .foundItems::after {
@@ -113,24 +136,37 @@ label {
   color: #ABABAB;
 }
 
-.story::-webkit-scrollbar {
+.storyBox::-webkit-scrollbar {
   width: 12px;
   height: 5px;
   background-color: transparent;
 }
-.story::-webkit-scrollbar-thumb {
+
+.storyBox::-webkit-scrollbar-thumb {
   background: rgb(255, 255, 255);
   background: rgba(255, 255, 255, 0.1);
 }
 
-.story::-webkit-scrollbar-track {
+.storyBox::-webkit-scrollbar-track {
   box-shadow: none;
   background-color: transparent;
 }
-.story::-webkit-scrollbar-button:increment {
-border-style: solid;
-border-width: 7px 6px 0 6px;
-border-color: green transparent transparent transparent;
-visibility: active;
+
+.storyBox::-webkit-scrollbar-button:increment {
+  border-style: solid;
+  border-width: 7px 6px 0 6px;
+  border-color: green transparent transparent transparent;
+  visibility: active;
 }
 
+.errorDirection {
+  color: red;
+}
+
+.errorDirection::before {
+  content: "You cannot "
+}
+
+.errorDirection::after {
+  content: " in this room."
+}
