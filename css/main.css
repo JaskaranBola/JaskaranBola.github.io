@@ -41,7 +41,7 @@ input[type="text"]:focus {
 
 .storyBox {
   position: absolute;
-  top: 170px;
+  top: 190px;
   left: 10px;
   color: white;
   height: 200px;
@@ -56,7 +56,7 @@ input[type="text"]:focus {
 
 .actionsContainer {
   position: absolute;
-  top: 485px;
+  top: 405px;
   left: 10px;
   color: white;
   height: 50px;
@@ -70,7 +70,7 @@ input[type="text"]:focus {
 
 .itemsContainer {
   position: absolute;
-  top: 440px;
+  top: 460px;
   left: 10px;
   color: white;
   width: 300px;
@@ -99,7 +99,7 @@ input[type="text"]:focus {
 
 label {
   color: green;
-  top: 540px;
+  top: 560px;
   text-align: right;
   clear: both;
   font-size: 22px;
