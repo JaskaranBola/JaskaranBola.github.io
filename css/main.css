@@ -5,7 +5,8 @@
 
 body {
   background-color: black;
-  position: center;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .frame {
