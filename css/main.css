@@ -2,7 +2,10 @@
   font-family: playball;
   src: url("https://fonts.googleapis.com/css?family=Playball");
 }
-
+html {
+  position:relative; 
+  left:-50%;
+}
 body {
   background-color: black;
 }
