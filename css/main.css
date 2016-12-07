@@ -5,9 +5,6 @@
 
 body {
   background-color: black;
-  height: 100%;
-  vertical-align: middle;
-  position: relative;
 }
 
 .frame {
@@ -15,8 +12,8 @@ body {
 }
 
 #darkroom {
-  background-size: cover;
-  position: absolute;
+  width: 800px;
+  height: 570px;
 }
 
 input[type="text"] {
@@ -102,7 +99,7 @@ input[type="text"]:focus {
 
 label {
   color: green;
-  top: 540px;
+  top: 560px;
   text-align: right;
   clear: both;
   font-size: 22px;
@@ -173,4 +170,14 @@ label {
 
 .errorDirection::after {
   content: " in this room."
+}
+
+.blind {
+  color: #ABABAB;
+  font-style: oblique;
+}
+
+.joke {
+  font-size: 7px;
+  color: #ABABAB;
 }
