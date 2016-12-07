@@ -12,7 +12,7 @@ body {
 }
 
 #darkroom {
-  height: 500px;
+  background-size: cover;
 }
 
 input[type="text"] {
