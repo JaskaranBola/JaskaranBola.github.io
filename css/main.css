@@ -49,7 +49,7 @@ input[type="text"]:focus {
   font: bold 16px Helvetica, Sans-Serif;
   //  letter-spacing: -1px;
   background: rgb(176, 176, 176);
-  background: rgba(176, 176, 176, 0.05);
+  background: rgba(176, 176, 176, 0.08);
   word-wrap: break-word;
   overflow: auto;
 }
