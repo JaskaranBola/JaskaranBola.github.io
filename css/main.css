@@ -16,6 +16,7 @@ body {
 
 #darkroom {
   background-size: cover;
+  position: absolute;
 }
 
 input[type="text"] {
