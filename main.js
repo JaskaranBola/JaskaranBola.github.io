@@ -6,6 +6,7 @@ $(document).ready(function() {
       var go = ['walk', 'go', 'run', 'crawl', 'jump'];
       var see = ['look', 'see', 'observe', 'scan', 'look around', 'scan area'];
       var pickup = ['pick', 'pick up', 'grab', 'snatch', 'get', 'take', 'obtain', 'steal', 'pickup'];
+      var use = ['use', 'activate', 'turn on', 'put in', 'unlock'];
       var level = 0;
       var input = document.getElementById("userinput").value.toLowerCase();
       var img = $("#darkroom");
@@ -31,6 +32,10 @@ $(document).ready(function() {
           level = 3;
         } else if (input === go[i]) {
           $('.actions').html("<span class=\"confused\"><i>Which direction: <u>North</u>, <u>South</u>, <u>West</u> or <u>East</u>?</span>");
+        } else if (input === go[i] + " " + 'back' && img.attr('src') !== "http://www.nikdaum.com/news/09shanghai1625.jpg") {
+          $('.story').html("You came back to the center of the apartment, now what? Maybe you should try <u>looking</u> around or going towards another <u>direction</u>");
+          $('.actions').html("<span class=\"actionoutput\"><i>You went back to the room</span>");
+          level = 1;
         }
       } //end of go
       $('#userinput').val('');
@@ -62,7 +67,17 @@ $(document).ready(function() {
         });
         $('.itemsNotif').html(" ");
         $('.story').html("You go towards the west and see a living room. The first thing you notice is the faint light emitting from a tipped over lamp. The next thing you notice is the window; it appears you are above ground level. The window is completely sealed and the glass doesn't seem brittle. There was no way you are going to be able to leave from this way. Try <u>looking</u> around or go <u>back</u> to the center.");
-      } //end of level change
+      } else if (level === 6 && img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
+        img.fadeOut(1000, function() {
+          img.attr("src", "https://i.imgur.com/WhWoXqZ.jpg").fadeIn(1000);
+        });
+        $('.story').html("As you turn on the flashlight, the darkness fades into light. You see a dusty room that seems like it hasn\'t been touched in months. You uncover the window from the curtains to release some light into the room. There has to be something that could help you here, try <u>looking</u> around or go <u>back</u> to go to another room.");
+      } else if (level === 7 && img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
+        img.fadeOut(1000, function() {
+          img.attr("src", "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png").fadeIn(1000);
+        });
+        $('.story').html("As you turn on the flashlight, the darkness fades into light. You see a door! Thats probably a good sign. This could be the way out. Hurry and get it to open and escape!");
+      } //end of level change 
       for (var j = 0; j < see.length; j++) {
         if (input === see[j]) {
           $('.actions').html("<span class=\"actionoutput\"><i>You look around the room</span>");
@@ -76,12 +91,15 @@ $(document).ready(function() {
             $('.itemsNotif').html("<span class=\"foundItems\"><u>Key</u></span>");
           } else if (img.attr('src') === "https://docs.unrealengine.com/latest/images/Resources/Showcases/RealisticRendering/NightSceneNoLights/RoomNightNoLights.jpg") {
             $('.itemsNotif').html("<span class=\"foundItems\"><u> </u></span>");
-          } else if (img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640"); {
+          } else if (img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
             $('.itemsNotif').html("<span class=\"blind\">You cannot see anything! <span class=\"joke\">Try turning on the lights next time..</span></span>");
           }
         }
       } //end of see 
       for (var k = 0; k < pickup.length; k++) {
+        if (input === pickup[k]) {
+          $('.actions').html("<span class=\"confused\"><i>Which <u>item</u> would you like to pick up?</i></span>");
+        }
         if (img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
           if (input === pickup[k] + " " + "flashlight") {
             inventory.push("flashlight");
@@ -96,7 +114,25 @@ $(document).ready(function() {
             $('.items').append("<img class=\'icons\' src=\"http://www.iconsdb.com/icons/preview/black/key-xxl.png\">");
           }
         }
+        if (img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
+          if (input === pickup[k]) {
+            $('.actions').html("<span class=\"actionoutput\"><i>You tried to grab something in the dark but, it was to no avail</span>");
+            $('.itemsNotif').html("<span class=\"blind\">It probably isn\'t a good idea to randomly grab stuff in the dark. <span class=\"joke\">Who knows what\'s lying around.</joke></span>");
+          }
+        }
       } // end of pickup
+      for (var m = 0; m < use.length; m++) { //Item if statements contained in image statements to reduce complexity of the use if statement.
+        if (input === use[m]) {
+          $('.actions').html("<span class=\"confused\"><i>Which <u>item</u> do you want to use?</i></span>");
+        }
+        if (level === 2 && input === use[m] + ' ' + 'flashlight') {
+          $('.actions').html("<span class=\"actionoutput\"><i>You used the flashlight</span>");
+          level = 6;
+        } else if (level === 4 && input === use[m] + ' ' + 'flashlight') {
+          $('.actions').html("<span class=\"actionoutput\"><i>You used the flashlight</span>");
+          level = 7;
+        }
+      } // end of use
     } // end of enter key area
   });
 });
