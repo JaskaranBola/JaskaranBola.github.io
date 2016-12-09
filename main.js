@@ -1,9 +1,11 @@
+//Copyright Jaskaran Bola 2016
+
 $(document).ready(function() {
   $('#userinput').keypress(function(e) {
     var key = e.which;
     if (key === 13) // Enter code starts here
     {
-      var go = ['walk', 'go', 'run', 'crawl', 'jump'];
+      var go = ['walk', 'go', 'run', 'crawl', 'jump', 'move', 'displace'];
       var see = ['look', 'see', 'observe', 'scan', 'look around', 'scan area'];
       var pickup = ['pick', 'pick up', 'grab', 'snatch', 'get', 'take', 'obtain', 'steal', 'pickup'];
       var use = ['use', 'activate', 'turn on', 'put in', 'unlock'];
