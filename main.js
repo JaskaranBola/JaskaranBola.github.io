@@ -1,5 +1,3 @@
-//Copyright Jaskaran Bola 2016
-
 $(document).ready(function() {
   $('#userinput').keypress(function(e) {
     var key = e.which;
