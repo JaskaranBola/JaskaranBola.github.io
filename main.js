@@ -171,6 +171,9 @@ $(document).ready(function() {
           img.attr("src", "https://media.giphy.com/media/3oz8xAnIX9sauh1JiE/giphy.gif").fadeIn(1000);
         });
       }
+      if (input === "rick roll") {
+      window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+      }
 //-------------------------------------TBC
     } // end of enter key area
   });
