@@ -135,6 +135,7 @@ $(document).ready(function() {
             img.fadeOut(1000, function() {
               img.attr("src", "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png").fadeIn(1000);
             });
+            $("#tabIcon").attr("href","https://i.imgur.com/7oF9RA4.png");
             $('.story').html("As you turn on the flashlight, the darkness fades into light. You see a door! Thats probably a good sign. This could be the way out. Hurry and get it to open and escape!");
           }
         } else if (img.attr('src') === "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png") {
