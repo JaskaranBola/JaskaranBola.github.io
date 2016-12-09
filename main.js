@@ -172,7 +172,7 @@ $(document).ready(function() {
         });
       }
       if (input === "rick roll") {
-      window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        $(location).attr('href', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
       }
 //-------------------------------------TBC
     } // end of enter key area
