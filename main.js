@@ -153,7 +153,7 @@ $(document).ready(function() {
       if (input === "hear" && img.attr('src') === "http://lh6.ggpht.com/_rTWMU1dqLCk/TBZlqgVlpTI/AAAAAAAADQY/CQnG6nkaPBo/s1600/None.jpg") {
         footsteps.play();
         $('.actions').html("<span class=\"actionoutput\"><i>You listen carefully</span>");
-        $('.story').html("What was that? Footsteps? <i>Is someone coming</i>? That\'s the first sound you heard in the area, it probably isn\'t a coincidence. <u>RUN</u>");
+        $('.story').html("What was that? Footsteps? <i>Is someone coming</i>? That\'s the first sound you heard in the area, it probably isn\'t a coincidence. <u>RUN</u>!");
       }
       if (input === "run" && img.attr('src') === "http://lh6.ggpht.com/_rTWMU1dqLCk/TBZlqgVlpTI/AAAAAAAADQY/CQnG6nkaPBo/s1600/None.jpg") {
         $('.actions').html("");
