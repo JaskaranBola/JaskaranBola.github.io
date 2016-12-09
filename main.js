@@ -163,6 +163,14 @@ $(document).ready(function() {
           img.attr("src", "https://media.giphy.com/media/3oz8xAnIX9sauh1JiE/giphy.gif").fadeIn(1000);
         });
       }
+      if (input === "tegnoor hacked the game") {
+        $('.actions').html("Tegnoor why are you here");
+        $('.itemsNotif').html("");
+        $('.story').html("<span class=\"end\"><strike>The End</strike> <br>To Be <u>Continued</u>...</span>");
+        img.fadeOut(1000, function() {
+          img.attr("src", "https://media.giphy.com/media/3oz8xAnIX9sauh1JiE/giphy.gif").fadeIn(1000);
+        });
+      }
 //-------------------------------------TBC
     } // end of enter key area
   });
