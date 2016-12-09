@@ -55,28 +55,19 @@ $(document).ready(function() {
           img.attr("src", "http://creativefan.com/important/cf/2012/09/dark-kitchen-cabinets/old-style-kitchen.jpg").fadeIn(1000);
         });
         $('.itemsNotif').html(" ");
-        $('.story').html("You go towards the east and see");
+        $('.story').html("You go towards the east and see a dusty old kitchen. The kitchen doesn\'t seem very hygienic. <span class=\"joke\">I hope you didn\'t eat anything from here.</span>");
       } else if (level === 4 && img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
         img.fadeOut(1000, function() {
-          img.attr("src", "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640").fadeIn(1000);
+          img.attr("src", "https://i.imgur.com/OhQL2yM.jpg").fadeIn(1000);
         });
         $('.itemsNotif').html(" ");
+        $('.story').html("You go towards the north and see...-It's too dark to see. You cannot see much, maybe you can <u>use</u> something to brighten the room or you can go <u>back</u> and try another direction.");
       } else if (level === 5 && img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
         img.fadeOut(1000, function() {
           img.attr("src", "https://docs.unrealengine.com/latest/images/Resources/Showcases/RealisticRendering/NightSceneNoLights/RoomNightNoLights.jpg").fadeIn(1000);
         });
         $('.itemsNotif').html(" ");
         $('.story').html("You go towards the west and see a living room. The first thing you notice is the faint light emitting from a tipped over lamp. The next thing you notice is the window; it appears you are above ground level. The window is completely sealed and the glass doesn't seem brittle. There was no way you are going to be able to leave from this way. Try <u>looking</u> around or go <u>back</u> to the center.");
-      } else if (level === 6 && img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
-        img.fadeOut(1000, function() {
-          img.attr("src", "https://i.imgur.com/WhWoXqZ.jpg").fadeIn(1000);
-        });
-        $('.story').html("As you turn on the flashlight, the darkness fades into light. You see a dusty room that seems like it hasn\'t been touched in months. You uncover the window from the curtains to release some light into the room. There has to be something that could help you here, try <u>looking</u> around or go <u>back</u> to go to another room.");
-      } else if (level === 7 && img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
-        img.fadeOut(1000, function() {
-          img.attr("src", "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png").fadeIn(1000);
-        });
-        $('.story').html("As you turn on the flashlight, the darkness fades into light. You see a door! Thats probably a good sign. This could be the way out. Hurry and get it to open and escape!");
       } //end of level change 
       for (var j = 0; j < see.length; j++) {
         if (input === see[j]) {
@@ -92,6 +83,8 @@ $(document).ready(function() {
           } else if (img.attr('src') === "https://docs.unrealengine.com/latest/images/Resources/Showcases/RealisticRendering/NightSceneNoLights/RoomNightNoLights.jpg") {
             $('.itemsNotif').html("<span class=\"foundItems\"><u> </u></span>");
           } else if (img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
+            $('.itemsNotif').html("<span class=\"blind\">You cannot see anything! <span class=\"joke\">Try turning on the lights next time..</span></span>");
+          } else if (img.attr('src') === "https://i.imgur.com/OhQL2yM.jpg") {
             $('.itemsNotif').html("<span class=\"blind\">You cannot see anything! <span class=\"joke\">Try turning on the lights next time..</span></span>");
           }
         }
@@ -125,13 +118,29 @@ $(document).ready(function() {
         if (input === use[m]) {
           $('.actions').html("<span class=\"confused\"><i>Which <u>item</u> do you want to use?</i></span>");
         }
-        if (level === 2 && input === use[m] + ' ' + 'flashlight') {
-          $('.actions').html("<span class=\"actionoutput\"><i>You used the flashlight</span>");
-          level = 6;
-        } else if (level === 4 && input === use[m] + ' ' + 'flashlight') {
-          $('.actions').html("<span class=\"actionoutput\"><i>You used the flashlight</span>");
-          level = 7;
-        }
+        for (var q = 0; q < inventory.length; q++) {
+          if (img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
+            if (input === use[m] + " " + "flashlight" && inventory[q] === "flashlight") {
+              $('.actions').html("<span class=\"actionoutput\"><i>You used the flashlight</span>");
+              img.fadeOut(1000, function() {
+                img.attr("src", "https://i.imgur.com/WhWoXqZ.jpg").fadeIn(1000);
+              });
+              $('.story').html("As you turn on the flashlight, the darkness fades into light. You see a dusty room that seems like it hasn\'t been touched in months. There has to be something that could help you here, try <u>looking</u> around or go <u>back</u> to go to another room.");
+            }
+          } else if (img.attr('src') === "https://i.imgur.com/OhQL2yM.jpg") {
+            if (input === use[m] + " " + "flashlight" && inventory[q] === "flashlight") {
+              $('.actions').html("<span class=\"actionoutput\"><i>You used the flashlight</span>");
+              img.fadeOut(1000, function() {
+                img.attr("src", "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png").fadeIn(1000);
+              });
+              $('.story').html("As you turn on the flashlight, the darkness fades into light. You see a door! Thats probably a good sign. This could be the way out. Hurry and get it to open and escape!");
+            }
+          } else if (img.attr('src') === "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png") {
+            if (input === use[m] + " " + "flashlight" && inventory[q] === "key") {
+              $('.actions').html("<span class=\"actionoutput\"><i>You used the key</span>");
+            }
+          }
+        } // end of inventory
       } // end of use
     } // end of enter key area
   });
