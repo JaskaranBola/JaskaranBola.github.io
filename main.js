@@ -10,11 +10,14 @@ $(document).ready(function() {
       var level = 0;
       var input = document.getElementById("userinput").value.toLowerCase();
       var img = $("#darkroom");
+      var flashlight = $("#flashlight");
+      var key = $("#key");
       var inventory = [];
+      var footsteps = new Audio('https://www.freesound.org/data/previews/153/153104_2364485-lq.mp3');
 
       for (var i = 0; i < go.length; i++) {
         if (input === "back" && img.attr('src') !== "http://www.nikdaum.com/news/09shanghai1625.jpg") {
-          $('.story').html("You came back to the center of the apartment, now what? Maybe you should try <u>looking</u> around or going towards another <u>direction</u>");
+          $('.story').html("You came back to the center of the apartment, now what? Maybe you should try <u>looking</u> around or going towards another <u>direction</u>.");
           $('.actions').html("<span class=\"actionoutput\"><i>You went back to the room</span>");
           level = 1;
         }
@@ -55,7 +58,7 @@ $(document).ready(function() {
           img.attr("src", "http://creativefan.com/important/cf/2012/09/dark-kitchen-cabinets/old-style-kitchen.jpg").fadeIn(1000);
         });
         $('.itemsNotif').html(" ");
-        $('.story').html("You go towards the east and see a dusty old kitchen. The kitchen doesn\'t seem very hygienic. <span class=\"joke\">I hope you didn\'t eat anything from here.</span>");
+        $('.story').html("You go towards the east and see a dusty old kitchen. The kitchen doesn\'t seem very hygienic. Try <u>looking</u> around or go <u>back</u> to the center. <span class=\"joke\">I hope you didn\'t eat anything from here.</span>");
       } else if (level === 4 && img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
         img.fadeOut(1000, function() {
           img.attr("src", "https://i.imgur.com/OhQL2yM.jpg").fadeIn(1000);
@@ -75,7 +78,7 @@ $(document).ready(function() {
           if (img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
             $('.itemsNotif').html("<span class=\"foundItems\"><u>flashlight</u></span>");
           } else if (img.attr('src') === "http://creativefan.com/important/cf/2012/09/dark-kitchen-cabinets/old-style-kitchen.jpg") {
-            $('.itemsNotif').html("<span class=\"foundItems\"><u> </u></span>");
+            $('.itemsNotif').html("<span>Nothing useful here...</span>");
           } else if (img.attr('src') === "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png") {
             $('.itemsNotif').html("<span class=\"foundItems\"><u>Piece of paper</u></span>");
           } else if (img.attr('src') === "https://i.imgur.com/WhWoXqZ.jpg") {
@@ -97,14 +100,14 @@ $(document).ready(function() {
           if (input === pickup[k] + " " + "flashlight") {
             inventory.push("flashlight");
             $('.actions').html("<span class=\"actionoutput\"><i>You picked up a flashlight</span>");
-            $('.items').append("<img class=\'icons\' src=\"https://cdn4.iconfinder.com/data/icons/proglyphs-miscellaneous/512/Flashlight-512.png\">");
+            $('.items').append("<img class=\'icons\' id=\'flashlight\' src=\"https://cdn4.iconfinder.com/data/icons/proglyphs-miscellaneous/512/Flashlight-512.png\">");
           }
         }
         if (img.attr('src') === "https://i.imgur.com/WhWoXqZ.jpg") {
           if (input === pickup[k] + " " + "key") {
             inventory.push("key");
             $('.actions').html("<span class=\"actionoutput\"><i>You picked up a key</span>");
-            $('.items').append("<img class=\'icons\' src=\"http://www.iconsdb.com/icons/preview/black/key-xxl.png\">");
+            $('.items').append("<img class=\'icons\' id=\'key\' src=\"http://www.iconsdb.com/icons/preview/black/key-xxl.png\">");
           }
         }
         if (img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
@@ -118,31 +121,48 @@ $(document).ready(function() {
         if (input === use[m]) {
           $('.actions').html("<span class=\"confused\"><i>Which <u>item</u> do you want to use?</i></span>");
         }
-        for (var q = 0; q < inventory.length; q++) {
-          if (img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
-            if (input === use[m] + " " + "flashlight" && inventory[q] === "flashlight") {
-              $('.actions').html("<span class=\"actionoutput\"><i>You used the flashlight</span>");
-              img.fadeOut(1000, function() {
-                img.attr("src", "https://i.imgur.com/WhWoXqZ.jpg").fadeIn(1000);
-              });
-              $('.story').html("As you turn on the flashlight, the darkness fades into light. You see a dusty room that seems like it hasn\'t been touched in months. There has to be something that could help you here, try <u>looking</u> around or go <u>back</u> to go to another room.");
-            }
-          } else if (img.attr('src') === "https://i.imgur.com/OhQL2yM.jpg") {
-            if (input === use[m] + " " + "flashlight" && inventory[q] === "flashlight") {
-              $('.actions').html("<span class=\"actionoutput\"><i>You used the flashlight</span>");
-              img.fadeOut(1000, function() {
-                img.attr("src", "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png").fadeIn(1000);
-              });
-              $('.story').html("As you turn on the flashlight, the darkness fades into light. You see a door! Thats probably a good sign. This could be the way out. Hurry and get it to open and escape!");
-            }
-          } else if (img.attr('src') === "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png") {
-            if (input === use[m] + " " + "flashlight" && inventory[q] === "key") {
-              $('.actions').html("<span class=\"actionoutput\"><i>You used the key</span>");
-              $('.story').html("The door opens wide and you see an empty");
-            }
+        if (img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
+          if (input === use[m] + " " + "flashlight" && flashlight.attr('src') === "https://cdn4.iconfinder.com/data/icons/proglyphs-miscellaneous/512/Flashlight-512.png") {
+            $('.actions').html("<span class=\"actionoutput\"><i>You used the flashlight</span>");
+            img.fadeOut(1000, function() {
+              img.attr("src", "https://i.imgur.com/WhWoXqZ.jpg").fadeIn(1000);
+            });
+            $('.story').html("As you turn on the flashlight, the darkness fades into light. You see a dusty room that seems like it hasn\'t been touched in months. There has to be something that could help you here, try <u>looking</u> around or go <u>back</u> to go to another room.");
           }
-        } // end of inventory
+        } else if (img.attr('src') === "https://i.imgur.com/OhQL2yM.jpg") {
+          if (input === use[m] + " " + "flashlight" && flashlight.attr('src') === "https://cdn4.iconfinder.com/data/icons/proglyphs-miscellaneous/512/Flashlight-512.png") {
+            $('.actions').html("<span class=\"actionoutput\"><i>You used the flashlight</span>");
+            img.fadeOut(1000, function() {
+              img.attr("src", "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png").fadeIn(1000);
+            });
+            $('.story').html("As you turn on the flashlight, the darkness fades into light. You see a door! Thats probably a good sign. This could be the way out. Hurry and get it to open and escape!");
+          }
+        } else if (img.attr('src') === "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png") {
+          if (input === use[m] + " " + "key" && key.attr('src') === "http://www.iconsdb.com/icons/preview/black/key-xxl.png") {
+            $('.actions').html("<span class=\"actionoutput\"><i>You used the key</span>");
+            $('.story').html("A click sound is made by the key in the lock. The door is unlocks and the doors open wide. You are in a hallway of what seems to be an apartment. You don\'t remember going to an apartment. As you are contemplating about how you got there, you <u>hear</u> something close.");
+            img.fadeOut(1000, function() {
+              img.attr("src", "http://lh6.ggpht.com/_rTWMU1dqLCk/TBZlqgVlpTI/AAAAAAAADQY/CQnG6nkaPBo/s1600/None.jpg").fadeIn(1000);
+            });
+            $('.itemsNotif').html("");
+          }
+        }
       } // end of use
+//-------------------------------------TBC
+      if (input === "hear" && img.attr('src') === "http://lh6.ggpht.com/_rTWMU1dqLCk/TBZlqgVlpTI/AAAAAAAADQY/CQnG6nkaPBo/s1600/None.jpg") {
+        footsteps.play();
+        $('.actions').html("<span class=\"actionoutput\"><i>You listen carefully</span>");
+        $('.story').html("What was that? Footsteps? <i>Is someone coming</i>? That\'s the first sound you heard in the area, it probably isn\'t a coincidence. <u>RUN</u>");
+      }
+      if (input === "run" && img.attr('src') === "http://lh6.ggpht.com/_rTWMU1dqLCk/TBZlqgVlpTI/AAAAAAAADQY/CQnG6nkaPBo/s1600/None.jpg") {
+        $('.actions').html("");
+        $('.itemsNotif').html("");
+        $('.story').html("<span class=\"end\"><strike>The End</strike> <br>To Be <u>Continued</u>...</span>");
+        img.fadeOut(1000, function() {
+          img.attr("src", "https://media.giphy.com/media/3oz8xAnIX9sauh1JiE/giphy.gif").fadeIn(1000);
+        });
+      }
+//-------------------------------------TBC
     } // end of enter key area
   });
 });
