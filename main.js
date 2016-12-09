@@ -138,6 +138,7 @@ $(document).ready(function() {
           } else if (img.attr('src') === "http://theblacksheeponline.com/wp-content/uploads/2016/03/powerout.png") {
             if (input === use[m] + " " + "flashlight" && inventory[q] === "key") {
               $('.actions').html("<span class=\"actionoutput\"><i>You used the key</span>");
+              $('.story').html("The door opens wide and you see an empty");
             }
           }
         } // end of inventory
