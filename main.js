@@ -39,6 +39,9 @@ $(document).ready(function() {
           $('.story').html("You came back to the center of the apartment, now what? Maybe you should try <u>looking</u> around or going towards another <u>direction</u>");
           $('.actions').html("<span class=\"actionoutput\"><i>You went back to the room</span>");
           level = 1;
+        } else if (input === go[i] + " " + "easter") {
+          $('.actions').html("<span class=\"actionoutput\"><i>Easter?</span>");
+          level = "easter";
         }
       } //end of go
       $('#userinput').val('');
@@ -71,6 +74,11 @@ $(document).ready(function() {
         });
         $('.itemsNotif').html(" ");
         $('.story').html("You go towards the west and see a living room. The first thing you notice is the faint light emitting from a tipped over lamp. The next thing you notice is the window; it appears you are above ground level. The window is completely sealed and the glass doesn't seem brittle. There was no way you are going to be able to leave from this way. Try <u>looking</u> around or go <u>back</u> to the center.");
+      } else if (level === "easter") {
+        img.fadeOut(1000, function() {
+          img.attr("src", "http://www.scaryforkids.com/pics/rabbit-stew.jpg").fadeIn(1000);
+        });
+        $('.story').html("An Easter Bunny appears..?");
       } //end of level change 
       for (var j = 0; j < see.length; j++) {
         if (input === see[j]) {
