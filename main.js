@@ -52,7 +52,7 @@ $(document).ready(function() {
         $('.itemsNotif').html(" ");
       } else if (level === 2 && img.attr('src') === "http://www.nikdaum.com/news/09shanghai1625.jpg") {
         img.fadeOut(1000, function() {
-          img.attr("src", "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640").fadeIn(1000);
+          img.attr("src", "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSSa5vmQNRS6hOTHK6Sq0mcd1ppi3uuLHvQt4E3F72ovl_Spkd3").fadeIn(1000);
         });
         $('.itemsNotif').html(" ");
         $('.story').html("You go towards the north and see...-It's too dark to see. You cannot see much, maybe you can <u>use</u> something to brighten the room or you can go <u>back</u> and try another direction.");
@@ -93,7 +93,7 @@ $(document).ready(function() {
             $('.itemsNotif').html("<span class=\"foundItems\"><u>Key</u></span>");
           } else if (img.attr('src') === "https://docs.unrealengine.com/latest/images/Resources/Showcases/RealisticRendering/NightSceneNoLights/RoomNightNoLights.jpg") {
             $('.itemsNotif').html("<span class=\"foundItems\"><u> </u></span>");
-          } else if (img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
+          } else if (img.attr('src') === "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSSa5vmQNRS6hOTHK6Sq0mcd1ppi3uuLHvQt4E3F72ovl_Spkd3") {
             $('.itemsNotif').html("<span class=\"blind\">You cannot see anything! <span class=\"joke\">Try turning on the lights next time..</span></span>");
           } else if (img.attr('src') === "https://i.imgur.com/OhQL2yM.jpg") {
             $('.itemsNotif').html("<span class=\"blind\">You cannot see anything! <span class=\"joke\">Try turning on the lights next time..</span></span>");
@@ -118,7 +118,7 @@ $(document).ready(function() {
             $('.items').append("<img class=\'icons\' id=\'key\' src=\"http://www.iconsdb.com/icons/preview/black/key-xxl.png\">");
           }
         }
-        if (img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
+        if (img.attr('src') === "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSSa5vmQNRS6hOTHK6Sq0mcd1ppi3uuLHvQt4E3F72ovl_Spkd3") {
           if (input === pickup[k]) {
             $('.actions').html("<span class=\"actionoutput\"><i>You tried to grab something in the dark but, it was to no avail</span>");
             $('.itemsNotif').html("<span class=\"blind\">It probably isn\'t a good idea to randomly grab stuff in the dark. <span class=\"joke\">Who knows what\'s lying around.</joke></span>");
@@ -129,7 +129,7 @@ $(document).ready(function() {
         if (input === use[m]) {
           $('.actions').html("<span class=\"confused\"><i>Which <u>item</u> do you want to use?</i></span>");
         }
-        if (img.attr('src') === "https://media.gettyimages.com/videos/graphic-fades-in-small-question-mark-moves-closer-to-screen-then-out-video-id1B02262_0008?s=640x640") {
+        if (img.attr('src') === "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSSa5vmQNRS6hOTHK6Sq0mcd1ppi3uuLHvQt4E3F72ovl_Spkd3") {
           if (input === use[m] + " " + "flashlight" && flashlight.attr('src') === "https://cdn4.iconfinder.com/data/icons/proglyphs-miscellaneous/512/Flashlight-512.png") {
             $('.actions').html("<span class=\"actionoutput\"><i>You used the flashlight</span>");
             img.fadeOut(1000, function() {
